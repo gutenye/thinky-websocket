@@ -1,0 +1,8 @@
+Build
+------
+
+    $ webpack
+    > dist/thinky.js
+
+
+# vim: ft=markdown
