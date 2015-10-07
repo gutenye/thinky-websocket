@@ -4,7 +4,10 @@ module.exports = {
   output: {
     path: path.join(__dirname, "dist"),
     filename: "thinky.js",
+    library: "Thinky",
+    libraryTarget: "umd"
   },
+
   node: {
     tls: "empty"
   }
