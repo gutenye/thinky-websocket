@@ -1,12 +1,12 @@
 {
   "name": "thinky-websocket",
-  "version": "2.1.6.3",
+  "version": "2.1.6.6",
   "homepage": "https://github.com/gutenye/thinky-websocket",
   "authors": [
     "Guten Ye <ywzhaifei@gmail.com>"
   ],
   "description": "",
-  "main": "dist/thinky.js",
+  "main": "thinky.js",
   "moduleType": [],
   "license": "MIT",
   "ignore": [

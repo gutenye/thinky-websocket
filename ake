@@ -1,3 +1,16 @@
 #!/usr/bin/env bash
 
-webpack
+release() {
+  cp bower.json dist
+  cd dist
+  git add .
+  git commit -m "$1"
+  git tag "$1"
+  git push --tags
+}
+
+
+case "$1" in
+  "" ) webpack ;;
+  release | r ) shift; release "$@" ;;
+esac
