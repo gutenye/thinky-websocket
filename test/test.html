@@ -9,12 +9,25 @@
 </body>
 <script src="../dist/thinky.js"></script>
 <script>
+"use strict";
 var pd = console.log.bind(console)
-var thinky = Thinky({port: 8015})
-var User = thinky.createModel("a", {})
-User.filter({}).then(v => {
-  pd("result", v)
+var thinky = Thinky({port: 8015, db: "aiDevelopment"})
+var User = thinky.createModel("bookmarks", {})
+User.changes().then(cursor => {
+  cursor.each((err, doc) => {
+    if (doc.isSaved() === false)
+      pd("deleted")
+    else if (doc.getOldValue() === null)
+      pd("insert", doc)
+    else
+      pd("update", doc, doc.getOldValue())
+  })
 })
+
+
+//User.filter({}).then(v => { pd("result", v) })
+//User.filter({}).then(v => { pd("result", v) })
+//User.count().execute.then(v => { pd(v)})
 </script>
 </html>
 
