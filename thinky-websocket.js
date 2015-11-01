@@ -7,6 +7,8 @@
 		exports["Thinky"] = factory();
 	else
 		root["Thinky"] = factory();
+//exports.__esModule = true;
+console.log(typeof exports, typeof module, typeof define)
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -1592,30 +1594,30 @@ return /******/ (function(modules) { // webpackBootstrap
 		__webpack_require__(38)(Promise, INTERNAL);
 		__webpack_require__(39)(Promise, INTERNAL);
 		__webpack_require__(40)(Promise, INTERNAL);
-		                                                         
-		    util.toFastProperties(Promise);                                          
-		    util.toFastProperties(Promise.prototype);                                
-		    function fillTypes(value) {                                              
-		        var p = new Promise(INTERNAL);                                       
-		        p._fulfillmentHandler0 = value;                                      
-		        p._rejectionHandler0 = value;                                        
-		        p._progressHandler0 = value;                                         
-		        p._promise0 = value;                                                 
-		        p._receiver0 = value;                                                
-		        p._settledValue = value;                                             
-		    }                                                                        
-		    // Complete slack tracking, opt out of field-type tracking and           
-		    // stabilize map                                                         
-		    fillTypes({a: 1});                                                       
-		    fillTypes({b: 2});                                                       
-		    fillTypes({c: 3});                                                       
-		    fillTypes(1);                                                            
-		    fillTypes(function(){});                                                 
-		    fillTypes(undefined);                                                    
-		    fillTypes(false);                                                        
-		    fillTypes(new Promise(INTERNAL));                                        
-		    CapturedTrace.setBounds(async.firstLineError, util.lastLineError);       
-		    return Promise;                                                          
+
+		    util.toFastProperties(Promise);
+		    util.toFastProperties(Promise.prototype);
+		    function fillTypes(value) {
+		        var p = new Promise(INTERNAL);
+		        p._fulfillmentHandler0 = value;
+		        p._rejectionHandler0 = value;
+		        p._progressHandler0 = value;
+		        p._promise0 = value;
+		        p._receiver0 = value;
+		        p._settledValue = value;
+		    }
+		    // Complete slack tracking, opt out of field-type tracking and
+		    // stabilize map
+		    fillTypes({a: 1});
+		    fillTypes({b: 2});
+		    fillTypes({c: 3});
+		    fillTypes(1);
+		    fillTypes(function(){});
+		    fillTypes(undefined);
+		    fillTypes(false);
+		    fillTypes(new Promise(INTERNAL));
+		    CapturedTrace.setBounds(async.firstLineError, util.lastLineError);
+		    return Promise;
 
 		};
 
@@ -6019,13 +6021,13 @@ return /******/ (function(modules) { // webpackBootstrap
 					V0_3: 1601562686,
 					V0_4: 1074539808
 				},
-				
+
 				Protocol: {
 					PROTOBUF: 656407617,
 					JSON: 2120839367
 				}
 			},
-			
+
 			Query: {
 				QueryType: {
 					START: 1,
@@ -6033,19 +6035,19 @@ return /******/ (function(modules) { // webpackBootstrap
 					STOP: 3,
 					NOREPLY_WAIT: 4
 				},
-				
+
 				AssocPair: {}
 			},
-			
+
 			Frame: {
 				FrameType: {
 					POS: 1,
 					OPT: 2
 				}
 			},
-			
+
 			Backtrace: {},
-			
+
 			Response: {
 				ResponseType: {
 					SUCCESS_ATOM: 1,
@@ -6056,7 +6058,7 @@ return /******/ (function(modules) { // webpackBootstrap
 					COMPILE_ERROR: 17,
 					RUNTIME_ERROR: 18
 				},
-				
+
 				ErrorType: {
 					INTERNAL: 1000000,
 					RESOURCE: 2000000,
@@ -6066,7 +6068,7 @@ return /******/ (function(modules) { // webpackBootstrap
 					OP_INDETERMINATE: 4200000,
 					USER: 5000000
 				},
-				
+
 				ResponseNote: {
 					SEQUENCE_FEED: 1,
 					ATOM_FEED: 2,
@@ -6075,7 +6077,7 @@ return /******/ (function(modules) { // webpackBootstrap
 					INCLUDES_STATES: 5
 				}
 			},
-			
+
 			Datum: {
 				DatumType: {
 					R_NULL: 1,
@@ -6086,10 +6088,10 @@ return /******/ (function(modules) { // webpackBootstrap
 					R_OBJECT: 6,
 					R_JSON: 7
 				},
-				
+
 				AssocPair: {}
 			},
-			
+
 			Term: {
 				TermType: {
 					DATUM: 1,
@@ -6268,7 +6270,7 @@ return /******/ (function(modules) { // webpackBootstrap
 					MINVAL: 180,
 					MAXVAL: 181
 				},
-				
+
 				AssocPair: {}
 			}
 		}
@@ -7412,7 +7414,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		      if (self.metadata[token].options.profile === true) {
 		        self.metadata[token].resolve({
 		          profile: response.p,
-		          result: stream 
+		          result: stream
 		        });
 		      }
 		      else {
@@ -7494,7 +7496,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		        if (self.metadata[token].options.profile === true) {
 		          currentResolve({
 		            profile: response.p,
-		            result: stream 
+		            result: stream
 		          });
 		        }
 		        else {
@@ -8290,8 +8292,8 @@ return /******/ (function(modules) { // webpackBootstrap
 		          }
 		          result.str += backtrace.str;
 		          result.car += backtrace.car;
-		          
-		          if (countKeys !== totalKeys) { 
+
+		          if (countKeys !== totalKeys) {
 		            carify(result, ',\n', underline);
 		          }
 
@@ -8773,11 +8775,11 @@ return /******/ (function(modules) { // webpackBootstrap
 		  if (Array.isArray(frames)) currentFrame = frames.shift();
 
 		  if (constants[term[0]]) {
-		    carify(result, 'r.'+typeToString[term[0]], underline); 
+		    carify(result, 'r.'+typeToString[term[0]], underline);
 		    return result;
 		  }
 
-		  carify(result, 'r.'+typeToString[term[0]]+'(', underline); 
+		  carify(result, 'r.'+typeToString[term[0]]+'(', underline);
 
 		  if (Array.isArray(term[1])) {
 		    for(var i=0; i<term[1].length; i++) {
@@ -8999,7 +9001,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		// Try to solve as many pending promises as possible
 		Cursor.prototype._flush = function() {
 		  while ((this._pendingPromises.length > 0) && ((this._data.length > 0) || ((this._fetching === false) && (this._canFetch === false)))) {
-		    var fullfiller = this._pendingPromises.shift(); 
+		    var fullfiller = this._pendingPromises.shift();
 		    var resolve = fullfiller.resolve;
 		    var reject = fullfiller.reject;
 
@@ -9097,7 +9099,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		  }
 
 		  self._next().then(resolve).error(function(error) {
-		    // We can silence error when the cursor is closed as this 
+		    // We can silence error when the cursor is closed as this
 		    if ((error.message !== 'You cannot retrieve data from a cursor that is closed.') &&
 		        (error.message.match(/You cannot called `next` on a closed/) === null)) {
 		      reject(error);
@@ -9392,7 +9394,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		        term._query = value;
 		    }
 		    term._r = r; // Keep a reference to r for global settings
-		    
+
 		    if (error !== undefined) {
 		        term._error = error;
 		        term._frames = [];
@@ -12877,7 +12879,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		      var found = false;
 		      for(var j=0; j<self._pools[UNKNOWN_POOLS].length; j++) {
 		        if (found) break;
-		        var pool = self._pools[UNKNOWN_POOLS][j]; 
+		        var pool = self._pools[UNKNOWN_POOLS][j];
 		        // If a pool is created with localhost, it will probably match the first server even though it may not the the one
 		        // So it gets an id
 		        for(var k=0; k<server.network.canonical_addresses.length; k++) {
@@ -13092,7 +13094,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		    });
 		  }).error(function(error) {
 		    self._log('Could not retrieve the data from server_status: '+JSON.stringify(error));
-		    
+
 		    var timeout;
 		    if (self._consecutiveFails === -1) {
 		      timeout = 0;
@@ -15788,7 +15790,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 7 */
 /***/ function(module, exports) {
 
-	
+
 	/**
 	 * isArray
 	 */
@@ -19161,17 +19163,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -19179,7 +19181,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	var Promise = __webpack_require__(30)();
@@ -19191,17 +19193,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -19209,7 +19211,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	var old;
@@ -20240,17 +20242,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -20258,7 +20260,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	var es5 = __webpack_require__(32);
@@ -20514,17 +20516,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -20532,7 +20534,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	var isES5 = (function(){
 	    "use strict";
@@ -20607,17 +20609,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -20625,7 +20627,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	var schedule = __webpack_require__(34);
@@ -20725,17 +20727,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -20743,7 +20745,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	var schedule;
@@ -20793,17 +20795,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -20811,7 +20813,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	function arrayCopy(src, srcIndex, dst, dstIndex, len) {
@@ -20914,17 +20916,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -20932,7 +20934,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	var Objectfreeze = __webpack_require__(32).freeze;
@@ -21065,17 +21067,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -21083,7 +21085,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function(Promise, INTERNAL) {
@@ -21204,17 +21206,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -21222,7 +21224,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function(Promise, INTERNAL, cast) {
@@ -21412,17 +21414,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -21430,7 +21432,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function() {
@@ -21635,17 +21637,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -21653,7 +21655,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function(NEXT_FILTER) {
@@ -21735,17 +21737,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -21753,7 +21755,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	var util = __webpack_require__(31);
@@ -21899,17 +21901,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -21917,7 +21919,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function(Promise) {
@@ -21943,17 +21945,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -21961,7 +21963,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function(Promise, NEXT_FILTER, cast) {
@@ -22069,17 +22071,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -22087,7 +22089,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	var util = __webpack_require__(31);
@@ -22153,17 +22155,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -22171,7 +22173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function(Promise) {
@@ -22235,17 +22237,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -22253,7 +22255,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports =
@@ -22363,17 +22365,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -22381,7 +22383,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	var _setTimeout = function(fn, ms) {
@@ -22460,17 +22462,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -22478,7 +22480,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function(Promise, INTERNAL, cast) {
@@ -22538,17 +22540,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -22556,7 +22558,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	var cr = Object.create;
@@ -22660,17 +22662,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -22678,7 +22680,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function(Promise, apiRejection, INTERNAL, cast) {
@@ -22817,17 +22819,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -22835,7 +22837,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function(Promise, PromiseArray, apiRejection, cast, INTERNAL) {
@@ -22972,17 +22974,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -22990,7 +22992,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function(Promise) {
@@ -23054,17 +23056,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -23072,7 +23074,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function(Promise, INTERNAL) {
@@ -23386,17 +23388,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -23404,7 +23406,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function(Promise, PromiseArray, cast) {
@@ -23500,17 +23502,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -23518,7 +23520,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function(Promise, PromiseArray, apiRejection, cast, INTERNAL) {
@@ -23664,17 +23666,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -23682,7 +23684,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports =
@@ -23737,17 +23739,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -23755,7 +23757,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports =
@@ -23894,17 +23896,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -23912,7 +23914,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function(Promise, PromiseArray) {
@@ -24004,17 +24006,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -24022,7 +24024,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function(Promise, INTERNAL) {
@@ -24085,17 +24087,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -24103,7 +24105,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function(Promise, INTERNAL) {
@@ -24125,17 +24127,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -24143,7 +24145,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function(Promise) {
@@ -24177,17 +24179,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -24195,7 +24197,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function(Promise, INTERNAL) {
@@ -24217,17 +24219,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Copyright (c) 2014 Petka Antonov
-	 * 
+	 *
 	 * Permission is hereby granted, free of charge, to any person obtaining a copy
 	 * of this software and associated documentation files (the "Software"), to deal
 	 * in the Software without restriction, including without limitation the rights
 	 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 	 * copies of the Software, and to permit persons to whom the Software is
 	 * furnished to do so, subject to the following conditions:</p>
-	 * 
+	 *
 	 * The above copyright notice and this permission notice shall be included in
 	 * all copies or substantial portions of the Software.
-	 * 
+	 *
 	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
@@ -24235,7 +24237,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
-	 * 
+	 *
 	 */
 	"use strict";
 	module.exports = function (Promise, apiRejection, cast) {
@@ -31122,14 +31124,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	              return r.object(
 	                'id', leftKey.add('_').add(rightKey),
 	                model.getTableName()+"_"+joins[field].leftKey, leftKey,
-	                joinedModel.getTableName()+"_"+joins[field].rightKey,rightKey 
+	                joinedModel.getTableName()+"_"+joins[field].rightKey,rightKey
 	              )
 	            }
 	            else if (model.getTableName() > joinedModel.getTableName()) {
 	              return r.object(
 	                'id', rightKey.add('_').add(leftKey),
 	                model.getTableName()+"_"+joins[field].leftKey, leftKey,
-	                joinedModel.getTableName()+"_"+joins[field].rightKey,rightKey 
+	                joinedModel.getTableName()+"_"+joins[field].rightKey,rightKey
 	              )
 	            }
 	            else {
@@ -31138,12 +31140,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	                r.object(
 	                  'id', leftKey.add('_').add(rightKey),
 	                  model.getTableName()+"_"+joins[field].leftKey, leftKey,
-	                  joinedModel.getTableName()+"_"+joins[field].rightKey,rightKey 
+	                  joinedModel.getTableName()+"_"+joins[field].rightKey,rightKey
 	                ),
 	                r.object(
 	                  'id', rightKey.add('_').add(leftKey),
 	                  model.getTableName()+"_"+joins[field].leftKey, leftKey,
-	                  joinedModel.getTableName()+"_"+joins[field].rightKey,rightKey 
+	                  joinedModel.getTableName()+"_"+joins[field].rightKey,rightKey
 	                )
 	              )
 	            }
